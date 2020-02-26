@@ -15,6 +15,8 @@
 		D132F3591FA71D5E006ABF54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D132F3581FA71D5E006ABF54 /* main.m */; };
 		D132F3611FA730A8006ABF54 /* 1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D132F3601FA72FF6006ABF54 /* 1.JPG */; };
 		D132F3621FA730A8006ABF54 /* spaceship.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D132F35F1FA72442006ABF54 /* spaceship.jpg */; };
+		D183E6D624051EBE00DAB32B /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D183E6D524051EBE00DAB32B /* CrashReporter.framework */; };
+		D1C0942A2404D13800FA1CB3 /* FluencyMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C094292404D13800FA1CB3 /* FluencyMonitor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,9 @@
 		D132F3581FA71D5E006ABF54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D132F35F1FA72442006ABF54 /* spaceship.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spaceship.jpg; sourceTree = "<group>"; };
 		D132F3601FA72FF6006ABF54 /* 1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.JPG; sourceTree = "<group>"; };
+		D183E6D524051EBE00DAB32B /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
+		D1C094282404D13800FA1CB3 /* FluencyMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FluencyMonitor.h; sourceTree = "<group>"; };
+		D1C094292404D13800FA1CB3 /* FluencyMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FluencyMonitor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D183E6D624051EBE00DAB32B /* CrashReporter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,10 +68,13 @@
 		D132F3481FA71D5E006ABF54 /* runloop优化tableview */ = {
 			isa = PBXGroup;
 			children = (
+				D183E6D524051EBE00DAB32B /* CrashReporter.framework */,
 				D132F3491FA71D5E006ABF54 /* AppDelegate.h */,
 				D132F34A1FA71D5E006ABF54 /* AppDelegate.m */,
 				D132F34C1FA71D5E006ABF54 /* ViewController.h */,
 				D132F34D1FA71D5E006ABF54 /* ViewController.m */,
+				D1C094282404D13800FA1CB3 /* FluencyMonitor.h */,
+				D1C094292404D13800FA1CB3 /* FluencyMonitor.m */,
 				D132F3601FA72FF6006ABF54 /* 1.JPG */,
 				D132F34F1FA71D5E006ABF54 /* Main.storyboard */,
 				D132F3521FA71D5E006ABF54 /* Assets.xcassets */,
@@ -150,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1C0942A2404D13800FA1CB3 /* FluencyMonitor.m in Sources */,
 				D132F34E1FA71D5E006ABF54 /* ViewController.m in Sources */,
 				D132F3591FA71D5E006ABF54 /* main.m in Sources */,
 				D132F34B1FA71D5E006ABF54 /* AppDelegate.m in Sources */,
@@ -287,6 +297,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XQ8CMT39QL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/runloop优化tableview",
+				);
 				INFOPLIST_FILE = "runloop优化tableview/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "changhong.runloop--tableview";
@@ -300,6 +315,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XQ8CMT39QL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/runloop优化tableview",
+				);
 				INFOPLIST_FILE = "runloop优化tableview/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "changhong.runloop--tableview";
