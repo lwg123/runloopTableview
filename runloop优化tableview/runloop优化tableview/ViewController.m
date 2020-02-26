@@ -19,6 +19,7 @@
  */
 
 #import "ViewController.h"
+#import "FluencyMonitor.h"
 
 typedef void(^RunloopBlock)(void);
 
@@ -39,26 +40,47 @@ static CGFloat CELL_HEIGHT = 135.f;
     _tasks = [NSMutableArray array];
     
     // 添加timer到当前runloop中，保证runloop不退出
-    [NSTimer scheduledTimerWithTimeInterval:0.0001 target:self selector:@selector(timerMethod) userInfo:nil repeats:YES];
-    
-    [self.exampleTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
-    
-    [self addRunloopObserver];
-}
-
-- (void)timerMethod{
-    // 啥都不做
-}
-
-// 在load时候生成tableview
-- (void)loadView{
-    // 在这个里面加载tableview需要先初始化self.view
-    self.view = [UIView new];
+   // [NSTimer scheduledTimerWithTimeInterval:0.0001 target:self selector:@selector(timerMethod) userInfo:nil repeats:YES];
     self.exampleTableView = [UITableView new];
     self.exampleTableView.dataSource = self;
     self.exampleTableView.delegate = self;
     [self.view addSubview:self.exampleTableView];
+    
+    [self.exampleTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
+    
+    [self addRunloopObserver];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(stopMonitor)];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(startMonitor)];
 }
+
+- (void)stopMonitor
+{
+    [[FluencyMonitor shareMonitor] stop];
+}
+
+
+- (void)startMonitor
+{
+    [[FluencyMonitor shareMonitor] start];
+}
+
+
+
+- (void)timerMethod{
+    // 啥都不做，保持线程
+}
+
+// 在load时候生成tableview
+//- (void)loadView{
+//    // 在这个里面加载tableview需要先初始化self.view
+//    self.view = [UIView new];
+//    self.exampleTableView = [UITableView new];
+//    self.exampleTableView.dataSource = self;
+//    self.exampleTableView.delegate = self;
+//    [self.view addSubview:self.exampleTableView];
+//}
 
 // 在此时添加frame
 - (void)viewWillAppear:(BOOL)animated{
@@ -102,6 +124,7 @@ static CGFloat CELL_HEIGHT = 135.f;
     [self addtask:^{
         [self addImage3Withcell:cell];
     }];
+    
     
     return cell;
 }
