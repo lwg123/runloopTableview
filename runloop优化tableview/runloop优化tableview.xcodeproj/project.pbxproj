@@ -17,6 +17,10 @@
 		D132F3621FA730A8006ABF54 /* spaceship.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D132F35F1FA72442006ABF54 /* spaceship.jpg */; };
 		D183E6D624051EBE00DAB32B /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D183E6D524051EBE00DAB32B /* CrashReporter.framework */; };
 		D1C0942A2404D13800FA1CB3 /* FluencyMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C094292404D13800FA1CB3 /* FluencyMonitor.m */; };
+		D1FF6524240E59130079AF97 /* MDCPUMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FF651C240E59130079AF97 /* MDCPUMonitor.m */; };
+		D1FF6525240E59130079AF97 /* MDLagMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FF6521240E59130079AF97 /* MDLagMonitor.m */; };
+		D1FF6526240E59130079AF97 /* SMCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FF6522240E59130079AF97 /* SMCallStack.m */; };
+		D1FF6527240E59130079AF97 /* SMCallLib.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FF6523240E59130079AF97 /* SMCallLib.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,14 @@
 		D183E6D524051EBE00DAB32B /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
 		D1C094282404D13800FA1CB3 /* FluencyMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FluencyMonitor.h; sourceTree = "<group>"; };
 		D1C094292404D13800FA1CB3 /* FluencyMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FluencyMonitor.m; sourceTree = "<group>"; };
+		D1FF651C240E59130079AF97 /* MDCPUMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCPUMonitor.m; sourceTree = "<group>"; };
+		D1FF651D240E59130079AF97 /* SMCallStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCallStack.h; sourceTree = "<group>"; };
+		D1FF651E240E59130079AF97 /* MDLagMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLagMonitor.h; sourceTree = "<group>"; };
+		D1FF651F240E59130079AF97 /* SMCallLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCallLib.h; sourceTree = "<group>"; };
+		D1FF6520240E59130079AF97 /* MDCPUMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCPUMonitor.h; sourceTree = "<group>"; };
+		D1FF6521240E59130079AF97 /* MDLagMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLagMonitor.m; sourceTree = "<group>"; };
+		D1FF6522240E59130079AF97 /* SMCallStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCallStack.m; sourceTree = "<group>"; };
+		D1FF6523240E59130079AF97 /* SMCallLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCallLib.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				D183E6D524051EBE00DAB32B /* CrashReporter.framework */,
+				D1FF651B240E59130079AF97 /* CrashHandler02 */,
 				D132F3491FA71D5E006ABF54 /* AppDelegate.h */,
 				D132F34A1FA71D5E006ABF54 /* AppDelegate.m */,
 				D132F34C1FA71D5E006ABF54 /* ViewController.h */,
@@ -84,6 +97,21 @@
 				D132F3581FA71D5E006ABF54 /* main.m */,
 			);
 			path = "runloop优化tableview";
+			sourceTree = "<group>";
+		};
+		D1FF651B240E59130079AF97 /* CrashHandler02 */ = {
+			isa = PBXGroup;
+			children = (
+				D1FF651C240E59130079AF97 /* MDCPUMonitor.m */,
+				D1FF651D240E59130079AF97 /* SMCallStack.h */,
+				D1FF651E240E59130079AF97 /* MDLagMonitor.h */,
+				D1FF651F240E59130079AF97 /* SMCallLib.h */,
+				D1FF6520240E59130079AF97 /* MDCPUMonitor.h */,
+				D1FF6521240E59130079AF97 /* MDLagMonitor.m */,
+				D1FF6522240E59130079AF97 /* SMCallStack.m */,
+				D1FF6523240E59130079AF97 /* SMCallLib.m */,
+			);
+			path = CrashHandler02;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,10 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1FF6525240E59130079AF97 /* MDLagMonitor.m in Sources */,
+				D1FF6527240E59130079AF97 /* SMCallLib.m in Sources */,
+				D1FF6526240E59130079AF97 /* SMCallStack.m in Sources */,
 				D1C0942A2404D13800FA1CB3 /* FluencyMonitor.m in Sources */,
 				D132F34E1FA71D5E006ABF54 /* ViewController.m in Sources */,
 				D132F3591FA71D5E006ABF54 /* main.m in Sources */,
 				D132F34B1FA71D5E006ABF54 /* AppDelegate.m in Sources */,
+				D1FF6524240E59130079AF97 /* MDCPUMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

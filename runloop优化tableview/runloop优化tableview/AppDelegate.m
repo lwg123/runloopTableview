@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FluencyMonitor.h"
+#import "MDLagMonitor.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[FluencyMonitor shareMonitor] startWithInterval:0.01 fault:0.01];
+    //[[FluencyMonitor shareMonitor] startWithInterval:0.01 fault:0.01];
+    
+    [[MDLagMonitor shareInstance] beginMonitor];
     return YES;
 }
 

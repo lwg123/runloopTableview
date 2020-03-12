@@ -30,7 +30,7 @@ static CGFloat CELL_HEIGHT = 135.f;
 
 @property (nonatomic, strong) UITableView *exampleTableView;
 @property (nonatomic, strong) NSMutableArray *tasks;
-
+@property (nonatomic, assign) NSString *str;
 @end
 
 @implementation ViewController
@@ -38,6 +38,9 @@ static CGFloat CELL_HEIGHT = 135.f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tasks = [NSMutableArray array];
+    
+    self.str = @"abcdefg";
+    NSLog(@"打印%@",self.str);
     
     // 添加timer到当前runloop中，保证runloop不退出
    // [NSTimer scheduledTimerWithTimeInterval:0.0001 target:self selector:@selector(timerMethod) userInfo:nil repeats:YES];
@@ -72,15 +75,6 @@ static CGFloat CELL_HEIGHT = 135.f;
     // 啥都不做，保持线程
 }
 
-// 在load时候生成tableview
-//- (void)loadView{
-//    // 在这个里面加载tableview需要先初始化self.view
-//    self.view = [UIView new];
-//    self.exampleTableView = [UITableView new];
-//    self.exampleTableView.dataSource = self;
-//    self.exampleTableView.delegate = self;
-//    [self.view addSubview:self.exampleTableView];
-//}
 
 // 在此时添加frame
 - (void)viewWillAppear:(BOOL)animated{
@@ -110,21 +104,21 @@ static CGFloat CELL_HEIGHT = 135.f;
     [self addText:cell indexPath:indexPath];
    
     // 添加图片 -- 这种添加图片方式会导致页面卡顿，不流畅，通过runloop对齐进行优化
-//    [self addImage1Withcell:cell];
-//    [self addImage2Withcell:cell];
-//    [self addImage3Withcell:cell];
+    [self addImage1Withcell:cell];
+    [self addImage2Withcell:cell];
+    [self addImage3Withcell:cell];
    
     //runloop 优化方式，把代码放进数组里，然后在runloop中执行
-    [self addtask:^{
-        [self addImage1Withcell:cell];
-    }];
-    [self addtask:^{
-        [self addImage2Withcell:cell];
-    }];
-    [self addtask:^{
-        [self addImage3Withcell:cell];
-    }];
-    
+//    [self addtask:^{
+//        [self addImage1Withcell:cell];
+//    }];
+//    [self addtask:^{
+//        [self addImage2Withcell:cell];
+//    }];
+//    [self addtask:^{
+//        [self addImage3Withcell:cell];
+//    }];
+//
     
     return cell;
 }
